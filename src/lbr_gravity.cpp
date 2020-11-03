@@ -2,28 +2,14 @@
 #include <cstdio>
 #include <cstring> // strstr
 
-
 #include "friUdpConnection.h"
 #include "friClientApplication.h"
-#include "PositionLBRClient.h"
+#include "GravityLBRClient.h"
 
 using namespace KUKA::FRI;
 
 #define DEFAULT_PORTID 30200
 
-// /**
-//  * @brief Prints versition of FRI library.
-//  * 
-//  */
-// void print_version() {
-//     std::cout << "Sunrise.Workbench FRI client SDK version is " << FRI_CLIENT_SDK_VERSION << "\n";
-// }
-
-/**
- * @brief The main function that starts everything.
- * 
- * @return int 0 if no errors.
- */
 int main (int argc, char** argv)
 {
 
@@ -43,7 +29,8 @@ int main (int argc, char** argv)
   char* hostname = (argc >= 2) ? argv[1] : NULL;
   int port = (argc >= 3) ? atoi(argv[2]) : DEFAULT_PORTID;
 
-  PositionLBRClient lbr_client;
+  GravityLBRClient lbr_client;
+  
   UdpConnection connection;
   ClientApplication app(connection, lbr_client);
   app.connect(port, hostname);

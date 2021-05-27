@@ -47,7 +47,7 @@ check in opened menu `Fully Preemptible Kernel (Real-Time) (PREEMPT_RT) (NEW)`
 Next, compile kernel
 
 ```
-fakeroot make -j8 deb-pkg
+fakeroot sudo make -j8 deb-pkg
 ```
 
 ```

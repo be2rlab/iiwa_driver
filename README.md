@@ -71,7 +71,7 @@ sudo addgroup realtime
 sudo usermod -a -G realtime $(whoami)
 ```
 
-and add following limits to real-time group
+and add following limits to real-time group (/etc/security/limits.conf)
 
 ```
 @realtime soft rtprio 99
